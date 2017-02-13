@@ -12,8 +12,17 @@ class App extends Component {
    }
   }
 
+  getTodos(){
+
+  }
+
   componentWillMount(){
-   this.setState({
+    this.getProjects();
+   this.getTodos();
+  }
+
+getProjects(){
+  this.setState({
      projects: [
        {
          id:uuid.v4(),
@@ -32,6 +41,11 @@ class App extends Component {
        }
      ]
    });
+}
+
+  componenDidMount(){
+   
+   this.getTodos();
   }
 
   handleAddProject(project){
@@ -58,5 +72,7 @@ class App extends Component {
     );
   }
 }
+
+
 
 export default App;
