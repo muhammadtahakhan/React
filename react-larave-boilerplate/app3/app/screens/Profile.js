@@ -10,7 +10,7 @@ export default class Profile extends Component {
     return (
       <View style={styles.container}>
         <Text style={styles.title}>
-          Bookcase
+          Bookcase4
         </Text>
       </View>
     );

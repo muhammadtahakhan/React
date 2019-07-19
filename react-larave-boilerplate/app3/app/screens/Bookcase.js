@@ -10,7 +10,7 @@ export default class Boookcase extends Component {
     return (
       <View style={styles.container}>
         <Text style={styles.title}>
-          Bookcase
+          Bookcase1
         </Text>
       </View>
     );

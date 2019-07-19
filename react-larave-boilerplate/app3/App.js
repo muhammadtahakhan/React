@@ -24,51 +24,66 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
+
+
+import { createStackNavigator, createAppContainer } from "react-navigation";
+import { Dimensions, Platform } from 'react-native';
+import { StackNavigator,  createBottomTabNavigator } from 'react-navigation';
+import Bookcase from './app/screens/Bookcase';
+import Explore from './app/screens/Explore';
+import AddBook from './app/screens/AddBook';
+import Lists from './app/screens/Lists';
+import Profile from './app/screens/Profile';
+
+
+const TabNavigator = createBottomTabNavigator({
+  'Bookcase': {
+    screen: Bookcase,
+    navigationOptions: {
+      tabBarLabel: 'Bookcase',
+      // tabBarIcon: ({ tintColor }) => <Icon name="open-book" type="entypo" size={28} color={tintColor} />
+    },
+  },
+  'Explore': {
+    screen: Explore,
+    navigationOptions: {
+      tabBarLabel: 'Explore',
+      // tabBarIcon: ({ tintColor }) => <Icon name="ios-map-outline" type="ionicon" size={28} color={tintColor} />
+    },
+  },
+  'Add Book': {
+    screen: AddBook,
+    navigationOptions: {
+      tabBarLabel: 'Add Book',
+      // tabBarIcon: ({ tintColor }) => <Icon name="ios-add-circle-outline" type="ionicon" size={28} color={tintColor} />
+    },
+  },
+  'Lists': {
+    screen: Lists,
+    navigationOptions: {
+      tabBarLabel: 'Lists',
+      // tabBarIcon: ({ tintColor }) => <Icon name="list" type="entypo" size={28} color={tintColor} />
+    },
+  },
+  'My Profile': {
+    screen: Profile,
+    navigationOptions: {
+      tabBarLabel: 'Profile',
+      // tabBarIcon: ({ tintColor }) => <Icon name="ios-person-outline" type="ionicon" size={28} color={tintColor} />
+    },
+  },
+});
+
+const AppNavigator = createStackNavigator({
+  Home: TabNavigator,
+  // Settings: SettingsScreen,
+});
+
+const AppContainer = createAppContainer(AppNavigator);
+
 const App = () => {
   return (
-    <Fragment>
-      <StatusBar barStyle="dark-content" />
-      <SafeAreaView>
-        <ScrollView
-          contentInsetAdjustmentBehavior="automatic"
-          style={styles.scrollView}>
-          <Header />
-          {global.HermesInternal == null ? null : (
-            <View style={styles.engine}>
-              <Text style={styles.footer}>Engine: Hermes</Text>
-            </View>
-          )}
-          <View style={styles.body}>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Khan..</Text>
-              <Text style={styles.sectionDescription}>
-                Edit <Text style={styles.highlight}>App.js</Text> to change this
-                screen and then come back to see your edits.
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>See Your Changes</Text>
-              <Text style={styles.sectionDescription}>
-                <ReloadInstructions />
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Debug</Text>
-              <Text style={styles.sectionDescription}>
-                <DebugInstructions />
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Learn More</Text>
-              <Text style={styles.sectionDescription}>
-                Read the docs to discover what to do next:
-              </Text>
-            </View>
-            <LearnMoreLinks />
-          </View>
-        </ScrollView>
-      </SafeAreaView>
-    </Fragment>
+    <AppContainer/>
   );
 };
 

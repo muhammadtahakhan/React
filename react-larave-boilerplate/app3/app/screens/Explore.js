@@ -10,7 +10,7 @@ export default class Explore extends Component {
     return (
       <View style={styles.container}>
         <Text style={styles.title}>
-          Bookcase
+          Bookcase2
         </Text>
       </View>
     );

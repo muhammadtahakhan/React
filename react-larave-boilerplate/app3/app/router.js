@@ -34,7 +34,7 @@ export const Tabs = TabNavigator({
     },
   },
   'Lists': {
-    screen: ReadingListStack,
+    screen: Lists,
     navigationOptions: {
       tabBarLabel: 'Lists',
       // tabBarIcon: ({ tintColor }) => <Icon name="list" type="entypo" size={28} color={tintColor} />

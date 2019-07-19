@@ -10,7 +10,7 @@ export default class Lists extends Component {
     return (
       <View style={styles.container}>
         <Text style={styles.title}>
-          Bookcase
+          Bookcase3
         </Text>
       </View>
     );
