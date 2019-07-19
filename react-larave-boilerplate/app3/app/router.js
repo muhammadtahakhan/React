@@ -8,6 +8,7 @@ import Explore from './screens/Explore';
 import AddBook from './screens/AddBook';
 import Lists from './screens/Lists';
 import Profile from './screens/Profile';
+import Map from './screens/Map';
 
 let screen = Dimensions.get('window');
 
@@ -47,9 +48,16 @@ export const TabNavigator = createBottomTabNavigator({
     screen: Profile,
     navigationOptions: {
       tabBarLabel: 'Profile',
-      tabBarIcon: ({ tintColor }) => <Icon name="ios-person-outline" type="ionicon" size={28} color={tintColor} />
+      tabBarIcon: ({ tintColor }) => <Icon name="person" type="ionicon" size={28} color={tintColor} />
     },
   },
+  'Map':{
+    screen:Map,
+    navigationOptions: {
+      tabBarLabel: 'Map',
+      tabBarIcon: ({ tintColor }) => <Icon name="ios-add-map-outline" type="ionicon" size={28} color={tintColor} />
+    },
+  }
 });
 
 
