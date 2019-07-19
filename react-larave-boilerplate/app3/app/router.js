@@ -20,7 +20,7 @@ export const TabNavigator = createBottomTabNavigator({
     screen: Bookcase,
     navigationOptions: {
       tabBarLabel: 'Bookcase',
-      tabBarIcon: ({ tintColor }) => <Icon name="open-book" type="entypo" size={28} color={tintColor} />
+      tabBarIcon: ({ tintColor }) => <Icon name="open-book" type="entypo" size={28} color={tintColor}/>
     },
   },
   'Explore': {

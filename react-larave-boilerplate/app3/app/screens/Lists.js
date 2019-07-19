@@ -4,15 +4,47 @@ import {
   Text,
   View
 } from 'react-native';
+import { ListItem } from 'react-native-elements';
 
 export default class Lists extends Component {
+  
   render() {
+    const list = [
+      {
+        name: 'Amy Farha',
+        avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg',
+        subtitle: 'Vice President'
+      },
+      {
+        name: 'Chris Jackson',
+        avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg',
+        subtitle: 'Vice Chairman'
+      },
+      {
+        name: 'Amy Farha',
+        avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/127.jpg',
+        subtitle: 'Vice President'
+      },
+      {
+        name: 'Amy Farha',
+        avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/127.jpg',
+        subtitle: 'Vice President'
+      },
+     
+    ];
     return (
-      <View style={styles.container}>
-        <Text style={styles.title}>
-          Bookcase3
-        </Text>
-      </View>
+          <View>
+            { 
+              list.map((l, i) => (
+                <ListItem
+                  key={i}
+                  leftAvatar={{ source: { uri: l.avatar_url } }}
+                  title={l.name}
+                  subtitle={l.subtitle}
+                />
+              ))
+            }
+    </View>
     );
   }
 }
